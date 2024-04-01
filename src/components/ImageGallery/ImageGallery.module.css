@@ -4,12 +4,15 @@
   margin: 0;
   display: flex;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .list li {
-  flex: 0 0 calc(20% - 20px);
+  /* flex: 0 0 calc(20% - 20px);
   margin-right: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 20px; */
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .list li:last-child {

@@ -31,7 +31,7 @@ export const ImageModal = ({ isOpen, onRequestClose, onOpenButton, content }) =>
         contentLabel="Modal"
       >
         <div>
-          <img src={content} alt="" width="800" height="600" />
+          <img src={content} alt="" width="1000" height="800" />
         </div>
       </Modal>
     </div>
