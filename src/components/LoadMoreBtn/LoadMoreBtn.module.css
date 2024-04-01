@@ -7,6 +7,12 @@
   color: white;
   font-size: 16px;
 }
+.button:hover {
+  background-color: rgba(79, 79, 218, 0.918);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
 .container {
   display: flex;
   justify-content: center;
