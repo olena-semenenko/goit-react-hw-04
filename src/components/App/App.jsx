@@ -33,16 +33,20 @@ const App = () => {
 
   useEffect(() => {
     async function fetchPhotos() {
+      if (query === '') return;
       try {
         setResponse([]);
-
-        setError(false);
         setLoading(true);
+        setError(false);
 
         const data = await fetchPhotosByQuery(query, page);
 
         setResponse(data);
-        console.log('data', data);
+
+        if (data.total_pages === 0) {
+          setError(true);
+          setLoadMore(false);
+        }
 
         if (photos === null || photos.length === 0) {
           setPhotos(data.results);
