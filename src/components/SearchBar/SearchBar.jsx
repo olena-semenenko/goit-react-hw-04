@@ -23,12 +23,13 @@ const SearchBar = ({ onSubmit }) => {
   };
 
   return (
-    <header className="css.header">
+    <header className={css.header}>
       <div>
-        <Toaster />
+        <Toaster position="top-right" />
       </div>
-      <form onSubmit={handleSubmit}>
+      <form className={css.form} onSubmit={handleSubmit}>
         <input
+          className={css.input}
           type="text"
           autoComplete="off"
           autoFocus
@@ -36,7 +37,9 @@ const SearchBar = ({ onSubmit }) => {
           onChange={handleChange}
           placeholder="Search images and photos"
         />
-        <button type="submit">Search</button>
+        <button className={css.button} type="submit">
+          🔍
+        </button>
       </form>
     </header>
   );

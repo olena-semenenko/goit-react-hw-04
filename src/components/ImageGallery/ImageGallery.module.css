@@ -1,0 +1,25 @@
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list li {
+  flex: 0 0 calc(20% - 20px);
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.list li:last-child {
+  margin-right: 0;
+}
+
+.list li:hover {
+  transform: scale(0.9);
+}
+
+.list li:focus {
+  transform: scale(0.9);
+}

@@ -28,25 +28,28 @@ const App = () => {
   const userQuery = value => {
     setQuery(value);
     console.log('query', value);
+    setPage(1);
   };
 
   useEffect(() => {
     async function fetchPhotos() {
       try {
         setResponse([]);
-        if (page === 0) {
-          setPage(1);
-        }
+
         setError(false);
         setLoading(true);
 
         const data = await fetchPhotosByQuery(query, page);
 
         setResponse(data);
+        console.log('data', data);
+
         if (photos === null || photos.length === 0) {
           setPhotos(data.results);
-        } else {
+        } else if (page > 1) {
           setPhotos([...photos, ...data.results]);
+        } else {
+          setPhotos(data.results);
         }
       } catch (error) {
         setError(true);

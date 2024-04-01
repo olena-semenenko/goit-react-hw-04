@@ -2,6 +2,14 @@ import { useState } from 'react';
 import Modal from 'react-modal';
 
 const customStyles = {
+  overlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(57, 55, 55, 0.75)',
+  },
   content: {
     top: '50%',
     left: '50%',
@@ -14,17 +22,7 @@ const customStyles = {
 Modal.setAppElement('#root');
 
 export const ImageModal = ({ isOpen, onRequestClose, onOpenButton, content }) => {
-  //   const [modalIsOpen, setIsOpen] = useState(false);
-
-  //   function openModal() {
-  //     setIsOpen(true);
-  //   }
-
   function afterOpenModal() {}
-
-  //   function closeModal() {
-  //     setIsOpen(false);
-  //   }
 
   return (
     <div>
@@ -36,7 +34,7 @@ export const ImageModal = ({ isOpen, onRequestClose, onOpenButton, content }) =>
         contentLabel="Modal"
       >
         <div>
-          <img src={content} alt="" width={400} />
+          <img src={content} alt="" width="1000" height="800" />
         </div>
       </Modal>
     </div>
