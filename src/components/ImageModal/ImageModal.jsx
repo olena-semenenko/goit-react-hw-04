@@ -22,13 +22,10 @@ const customStyles = {
 Modal.setAppElement('#root');
 
 export const ImageModal = ({ isOpen, onRequestClose, onOpenButton, content }) => {
-  function afterOpenModal() {}
-
   return (
     <div>
       <Modal
         isOpen={isOpen}
-        onAfterOpen={afterOpenModal}
         onRequestClose={onRequestClose}
         style={customStyles}
         contentLabel="Modal"
