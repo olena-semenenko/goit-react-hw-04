@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-import Modal from 'react-modal';
 import { fetchPhotosByQuery } from '../api';
 
 import SearchBar from '../SearchBar/SearchBar';
@@ -27,15 +25,15 @@ const App = () => {
 
   const userQuery = value => {
     setQuery(value);
-    console.log('query', value);
+
     setPage(1);
+    setPhotos(null);
   };
 
   useEffect(() => {
     async function fetchPhotos() {
       if (query === '') return;
       try {
-        setResponse([]);
         setLoading(true);
         setError(false);
 
@@ -79,7 +77,6 @@ const App = () => {
 
   // logic of open modal
   const handleImageClick = url => {
-    console.log('url', url);
     setContent(url);
   };
 
@@ -104,7 +101,9 @@ const App = () => {
       )}
       {error && <ErrorMessage></ErrorMessage>}
       {loading && <Loader></Loader>}
-      {loadMore && <LoadMoreBtn onLoadMoreBtn={loadMorePhotos}></LoadMoreBtn>}
+      {loadMore && (
+        <LoadMoreBtn loadMoreScroll={photos} onLoadMoreBtn={loadMorePhotos}></LoadMoreBtn>
+      )}
       <ImageModal
         onOpenButton={openModal}
         isOpen={modalIsOpen}

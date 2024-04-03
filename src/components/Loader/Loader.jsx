@@ -1,17 +1,16 @@
-import { Watch } from 'react-loader-spinner';
+import { Bars } from 'react-loader-spinner';
 import css from './Loader.module.css';
 const Loader = () => {
   return (
     <div className={css.loader}>
-      <Watch
-        visible={true}
-        height="80"
+      <Bars
+        height="60"
         width="80"
-        radius="48"
         color="#131ddc"
-        ariaLabel="watch-loading"
+        ariaLabel="bars-loading"
         wrapperStyle={{}}
         wrapperClass=""
+        visible={true}
       />
     </div>
   );

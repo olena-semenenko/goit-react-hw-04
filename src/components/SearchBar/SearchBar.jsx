@@ -8,7 +8,7 @@ const SearchBar = ({ onSubmit }) => {
   const handleSubmit = e => {
     e.preventDefault();
     if (userInput) {
-      const userSearch = userInput.toLocaleLowerCase();
+      const userSearch = userInput.toLocaleLowerCase().trim();
 
       onSubmit(userSearch);
     } else {
